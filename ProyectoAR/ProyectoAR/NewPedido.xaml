@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoAR.NewPedido"
+             xmlns:local="clr-namespace:ProyectoAR"
+             xmlns:lv="clr-namespace:Xamarin.Forms.MultiSelectListView;assembly=Xamarin.Forms.MultiSelectListView"
+             Title="Nuevo Pedido">
+    <ContentPage.Content>
+        <StackLayout Margin="32">
+            <Entry x:Name="txtCliente"
+                   Placeholder="Nombre del cliente"/>
+            <StackLayout Orientation="Horizontal">
+                <Label VerticalOptions="Center" Text="Fecha de entrega: "/>
+                <DatePicker x:Name="dpEntrega" HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+            <Label Text="Productos"
+                   Margin="0, 16, 0, 0"/>
+
+            <local:NuevoPedido/>
+
+            <Button x:Name="btn_addPedido" 
+                    Text="Agregar"
+                    Clicked="btn_addPedido_Clicked"
+                    VerticalOptions="End"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

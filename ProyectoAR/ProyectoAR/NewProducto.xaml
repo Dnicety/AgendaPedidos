@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoAR.NewProducto"
+             Title="Nuevo Producto">
+    <ContentPage.Content>
+        <StackLayout Margin="32">
+            <Entry x:Name="txtNombreProducto"
+                   Placeholder="Nombre del producto"/>
+            <Editor x:Name="editorDesc"
+                    Placeholder="Descripcion del producto"
+                    HeightRequest="100"/>
+            <Picker x:Name="pickerCaratula"
+                    Title="== Seleccionar tipo de producto ==">
+                <Picker.Items>
+                    <x:String>VideoJuego</x:String>
+                    <x:String>Comida</x:String>
+                    <x:String>Articulos</x:String>
+                    <x:String>Servicio</x:String>
+                </Picker.Items>
+            </Picker>
+            <StackLayout Orientation="Horizontal"
+                         VerticalOptions="EndAndExpand">
+                <Label Text="Precio del producto: "
+                       VerticalOptions="Center"/>
+                <Entry x:Name="txtPrecio"
+                       HorizontalOptions="EndAndExpand"
+                       WidthRequest="100"
+                       Keyboard="Numeric"/>
+            </StackLayout>
+            <Button x:Name="btn_AddProducto"
+                    Text="Agregar Producto"
+                    Clicked="btn_AddProducto_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

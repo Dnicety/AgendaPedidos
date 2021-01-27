@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoAR.MainPage"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             android:TabbedPage.ToolbarPlacement="Bottom"
+             xmlns:local ="clr-namespace:ProyectoAR"
+             Title="Agenda de pedidos">
+
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem x:Name="btn_NewPedido"
+                     IconImageSource="btnadd.png"
+                     Text="Nuevo pedido"
+                     Order="Secondary"
+                     Clicked="btn_NewPedido_Clicked"/>
+        <ToolbarItem x:Name="btn_NewProducto"
+                     Text="Nuevo producto"
+                     Order="Secondary"
+                     Clicked="btn_NewProducto_Clicked"/>
+    </TabbedPage.ToolbarItems>
+    
+    <local:PagePedido
+        Title="Pedidos"
+        IconImageSource="pedido.png"/>
+
+    <local:PageVenta
+        Title="Ventas"
+        IconImageSource="ventas.png"/>
+
+    <local:PageAdmin
+        Title="Administrar"
+        IconImageSource="config.png"/>
+
+</TabbedPage>

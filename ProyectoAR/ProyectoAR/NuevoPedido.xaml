@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:lv="clr-namespace:Xamarin.Forms.MultiSelectListView;assembly=Xamarin.Forms.MultiSelectListView"
+             x:Class="ProyectoAR.NuevoPedido">
+    <ListView x:Name="lvProductos"
+                      HasUnevenRows="True"
+                      lv:MultiSelect.Enable="True"
+                      BackgroundColor="Beige"
+                      ItemsSource="{Binding Productos}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <lv:SelectableCell x:Name="SelectableCell">
+                    <lv:SelectableCell.CheckView>
+                        <Image Source="check.png" WidthRequest="30" HeightRequest="30"/>
+                    </lv:SelectableCell.CheckView>
+                    <lv:SelectableCell.DataView>
+                        <StackLayout Orientation="Vertical"
+                                     HorizontalOptions="FillAndExpand">
+                            <Label Text="{Binding NombreProducto}"
+                                   FontSize="18"/>
+                            <Label Text="{Binding TipoProducto}"
+                                   FontSize="12"
+                                   FontAttributes="Italic"/>
+                            <Label Text="{Binding DescProducto}"
+                                   FontSize="12"
+                                   TextColor="Gray"/>
+                            <StackLayout Orientation="Horizontal"
+                                         VerticalOptions="EndAndExpand">
+                                <Label Text="Precio MXN: $"
+                                       HorizontalOptions="EndAndExpand"/>
+                                <Label Text="{Binding PrecProducto}"
+                                       FontSize="18"
+                                       TextColor="Green"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </lv:SelectableCell.DataView>
+                </lv:SelectableCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+        <ListView.Behaviors>
+            <lv:SelectedItemBehavior Command="{Binding DisplayNameCommand}"/>
+        </ListView.Behaviors>
+    </ListView>
+</StackLayout>

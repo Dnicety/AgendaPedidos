@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoAR.PageAdmin">
+    <ContentPage.Content>
+        <StackLayout Margin="32"
+                     Orientation="Vertical">
+            <Button x:Name="btnReporte" 
+                    Text="Generar reporte de ventas"
+                    TextColor="White"
+                    BackgroundColor="Blue"
+                    Clicked="btnReporte_Clicked"
+                    CornerRadius="4"/>
+            <Button x:Name="btnVer"
+                    Margin="0, 32, 0, 0"
+                    Text="Ver ultimo reporte de ventas"
+                    TextColor="White"
+                    BackgroundColor="Green"
+                    Clicked="btnVer_Clicked"
+                    CornerRadius="4"/>
+            <Editor x:Name="Editor"
+                    Margin="0, 32, 0, 0"
+                    HeightRequest="300"
+                    BackgroundColor="Beige"
+                    IsEnabled="False"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
